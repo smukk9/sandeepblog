@@ -4,23 +4,30 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
-	}
+        jcenter()
+
+    }
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+apply plugin: 'application'
 
 group = 'com.sandeep'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+mainClassName = 'com.sandeep.blogconfig.BlogConfigserverApplication'
 
 repositories {
 	mavenCentral()
 }
+
 
 
 ext {
@@ -40,3 +47,9 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
+distDocker {
+    exposePort 8595
+    setEnvironment 'JAVA_OPTS', '-Dspring.profiles.active=docker'
+}
+
