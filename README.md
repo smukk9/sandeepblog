@@ -1,3 +1,5 @@
-My Blog
+# Project Blog #
 
-* Config server up 
+### Configuration server ###
+----
+* Config server up and [Git external configuration repo](https://github.com/smukk9/blog-config-external.git)
