@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: blog-discover
+  cloud:
+    config:
+      uri: http://localhost:8595
+

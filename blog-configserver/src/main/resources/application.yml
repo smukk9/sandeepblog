@@ -8,4 +8,9 @@ spring:
         git:
           uri: https://github.com/smukk9/blog-config-external.git
           search-paths:
-          - blog*
+          - blog-*
+          force-pull: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8766/eureka}
