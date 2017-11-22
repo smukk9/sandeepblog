@@ -1,0 +1,7 @@
+blog-mongo:
+  image: com.sandeep/blog-monogo:latest
+  restart: always
+  ports:
+    - "27017:27017"
+  volumes:
+    - blog-mongovolume:/data/db

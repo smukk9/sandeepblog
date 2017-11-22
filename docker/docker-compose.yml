@@ -1,0 +1,13 @@
+blog-discover:
+  image: com.sandeep/blog-discover:0.0.1-SNAPSHOT
+  restart: always
+  ports:
+    - "8766:8766"
+
+blog-configserver:
+  image: com.sandeep/blog-configserver:0.0.1-SNAPSHOT
+  restart: always
+  ports:
+    - "8595:8595"
+  links:
+    - blog-discover
